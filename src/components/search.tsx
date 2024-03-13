@@ -7,6 +7,8 @@ import type { Location } from "../types/location";
 
 // TODO: add geolocation -> https://usehooks.com/usegeolocation
 
+// TODO: reverse geocoding nedded -> https://openweathermap.org/api/geocoding-api#reverse || https://openweathermap.org/price
+
 export default function Search({
   setLocation,
 }: {

@@ -19,6 +19,7 @@ export default function SearchResults({
         >
           <button
             type="button"
+            className="w-full h-full text-left"
             onClick={() => {
               setLocation({
                 name: `${r.name} - ${r.admin1} ,${r.country}`,

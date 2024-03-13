@@ -7,10 +7,12 @@ export default function WeatherChart({
   hourlyData,
   seriesData,
   name,
+  color,
 }: {
   hourlyData: Hourly;
   seriesData: string;
   name: string;
+  color: string;
 }) {
   const [options, setOptions] = useState({});
   const [series, setSeries] = useState<any[]>([]);
@@ -45,6 +47,7 @@ export default function WeatherChart({
       xaxis: {
         categories,
       },
+      colors: [color],
     });
     setSeries([
       {
@@ -52,7 +55,7 @@ export default function WeatherChart({
         data: data,
       },
     ]);
-  }, [hourlyData, seriesData, name]);
+  }, [hourlyData, seriesData, name, color]);
 
   if (series.length === 0) return null;
 

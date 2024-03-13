@@ -91,7 +91,7 @@ export default function WeatherForcast({ data }: { data: Weather }) {
             </div>
 
             <div className="flex items-center">
-              <WeatherIcon icon="umbrella" width={50} height={50} />
+              <WeatherIcon icon="umbrella" width={35} height={35} />
               <span>
                 {day.precipitation_sum}mm / {day.precipitation_probability_max}%
               </span>
@@ -108,21 +108,6 @@ export default function WeatherForcast({ data }: { data: Weather }) {
               />
               <span>{day.wind_speed_10m_max}m/s</span>
             </div>
-            {/*
-            <div className="flex items-center">
-              <WeatherIcon icon="uv-index" width={35} height={35} />
-              <span>{day.uv_index_max}</span>
-            </div>
-
-            <div className="flex items-center">
-              <WeatherIcon icon="sunrise" width={35} height={35} />
-              <span>{new Date(day.sunrise).toLocaleTimeString()}</span>
-            </div>
-
-            <div className="flex items-center">
-              <WeatherIcon icon="sunset" width={35} height={35} />
-              <span>{new Date(day.sunset).toLocaleTimeString()}</span>
-            </div> */}
           </div>
         ))}
       </div>

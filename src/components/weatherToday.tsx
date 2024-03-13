@@ -70,7 +70,7 @@ export default function WeatherToday({ data }: { data: Weather }) {
           </div>
         </div>
         <div className="md:col-span-4">
-          {data?.hourly && <WeatherChartTab hourlyData={data.hourly} />}
+          <WeatherChartTab data={data} />
         </div>
       </div>
     </div>
