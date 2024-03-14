@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useGeolocation } from "@uidotdev/usehooks";
 import SearchInput from "./searchInput";
 import SearchResults from "./searchResults";
 import type { Geocoding } from "../types/geocoding";
@@ -42,45 +41,6 @@ export default function Search({
       clearTimeout(handler);
     };
   }, [squery]);
-
-  const geolocation = useGeolocation();
-
-  useEffect(() => {
-    if (
-      geolocation.loading === false &&
-      geolocation.latitude !== null &&
-      geolocation.longitude !== null
-    ) {
-      const fetchData = async () => {
-        try {
-          // TODO: make own api to hide key |fastify or symfony
-          const res = await axios({
-            method: "GET",
-            url: `https://api.openweathermap.org/geo/1.0/reverse?lat=${
-              geolocation.latitude
-            }&lon=${geolocation.longitude}&limit=1&appid=${
-              import.meta.env.VITE_OPENWEATHERMAP_API_KEY
-            }`,
-          });
-
-          if (!res) {
-            return console.log("No results found");
-          }
-
-          setLocation({
-            name: `${res.data[0].name} - ${res.data[0].state}, ${res.data[0].country}`,
-            latitude: geolocation.latitude !== null ? geolocation.latitude : 0,
-            longitude:
-              geolocation.longitude !== null ? geolocation.longitude : 0,
-          });
-        } catch (error: any) {
-          console.log(error);
-        }
-      };
-
-      fetchData();
-    }
-  }, [geolocation, setLocation]);
 
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
