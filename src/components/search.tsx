@@ -56,7 +56,7 @@ export default function Search({
           // TODO: make own api to hide key |fastify or symfony
           const res = await axios({
             method: "GET",
-            url: `http://api.openweathermap.org/geo/1.0/reverse?lat=${
+            url: `https://api.openweathermap.org/geo/1.0/reverse?lat=${
               geolocation.latitude
             }&lon=${geolocation.longitude}&limit=1&appid=${
               import.meta.env.VITE_OPENWEATHERMAP_API_KEY
