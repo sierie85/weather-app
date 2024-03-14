@@ -15,7 +15,12 @@ export default function App() {
         <div className="container mx-auto py-10 flex justify-around items-center">
           <h1 className="text-3xl pr-5">
             <a href="/">
-              <img src="./logo.svg" width="60" height="60" />
+              <img
+                src="./logo.svg"
+                alt="weather app logo"
+                width="60"
+                height="60"
+              />
             </a>
           </h1>
           <Search setLocation={setLocation} />

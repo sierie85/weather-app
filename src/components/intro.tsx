@@ -17,8 +17,10 @@ export default function Intro() {
         </p>
         <img
           className="border rounded"
-          src="./screenshot.jpg"
+          src="./screenshot.webp"
           alt="screenshot of app"
+          width="100%"
+          height="auto"
         />
       </div>
       <div className="w-full">
