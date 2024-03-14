@@ -18,7 +18,7 @@ export default function App() {
               <img src="./logo.svg" width="60" height="60" />
             </a>
           </h1>
-          <Search setLocation={setLocation} />{" "}
+          <Search setLocation={setLocation} />
         </div>
         <div className="container mx-auto py-5">
           {location !== null ? <Weather location={location} /> : <HowTo />}

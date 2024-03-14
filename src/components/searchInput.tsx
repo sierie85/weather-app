@@ -33,9 +33,10 @@ export default function SearchInput({
           onChange={(e) => setSQuery(e.currentTarget.value)}
           type="search"
           id="loc-search"
-          className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 bg-white focus:ring-yellow-200 focus:border-yellow-200 !outline-none"
-          placeholder="Munich, Paris, Berlin, Amsterdam, ..."
+          className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 bg-white focus:ring-slate-500 focus:border-slate-600 !outline-none"
+          placeholder="Berlin, Amsterdam, Paris ..."
           required
+          autoFocus
         />
         <button
           type="submit"

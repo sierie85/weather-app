@@ -11,7 +11,6 @@ export default function Search({
   setLocation: (location: Location) => void;
 }) {
   const [squery, setSQuery] = useState<string>("");
-
   const [results, setResults] = useState<Geocoding[]>([]);
 
   useEffect(() => {
@@ -22,7 +21,7 @@ export default function Search({
           url: `https://geocoding-api.open-meteo.com/v1/search?name=${squery}&count=10`,
         });
 
-        if (res.data.results.length === 0) {
+        if (!res.data) {
           return console.log("No results found");
         }
         setResults(res.data.results);

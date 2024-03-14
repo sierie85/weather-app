@@ -15,11 +15,11 @@ export default function SearchResults({
       {results.map((r: Geocoding) => (
         <li
           key={r.id}
-          className="min-h-10 w-full border-b-2 flex items-center px-10 text-black"
+          className="min-h-10 w-full border-b-2 flex items-center text-black hover:bg-slate-500 hover:text-white"
         >
           <button
             type="button"
-            className="w-full h-full text-left"
+            className="w-full h-full text-left px-10"
             onClick={() => {
               setLocation({
                 name: `${r.name} - ${r.admin1} ,${r.country}`,
