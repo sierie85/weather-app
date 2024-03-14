@@ -11,7 +11,7 @@ export default function WeatherToday({ data }: { data: Weather }) {
         <div className="flex items-center justify-center md:col-span-1">
           <WeatherIcon
             icon={
-              weatherCodeTable[data.daily.weather_code[0]][
+              weatherCodeTable[data.current.weather_code][
                 `icon_${data.current.is_day ? "day" : "night"}`
               ]
             }
@@ -37,19 +37,13 @@ export default function WeatherToday({ data }: { data: Weather }) {
               height={50}
             />
             <span>
-              <strong>
-                {data.daily.temperature_2m_max[0]}°C /{" "}
-                {data.daily.temperature_2m_min[0]}°C
-              </strong>
+              <strong>{data.current.temperature_2m}°C</strong>
             </span>
           </div>
 
           <div className="flex items-center">
             <WeatherIcon icon="umbrella" width={50} height={50} />
-            <span>
-              {data.daily.precipitation_sum[0]}mm /{" "}
-              {data.daily.precipitation_probability_max[0]}%
-            </span>
+            <span>{data.current.precipitation}mm</span>
           </div>
 
           <div className="flex items-center">
@@ -58,10 +52,10 @@ export default function WeatherToday({ data }: { data: Weather }) {
               width={50}
               height={50}
               styles={{
-                transform: `rotate(${data.daily.wind_direction_10m_dominant[0]}deg)`,
+                transform: `rotate(${data.current.wind_direction_10m}deg)`,
               }}
             />
-            <span>{data.daily.wind_speed_10m_max[0]}m/s</span>
+            <span>{data.current.wind_speed_10m}m/s</span>
           </div>
 
           <div className="flex items-center">
