@@ -43,6 +43,9 @@ export default function WeatherChart({
         toolbar: {
           show: false,
         },
+        zoom: {
+          enabled: false,
+        },
       },
       xaxis: {
         categories,

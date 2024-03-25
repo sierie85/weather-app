@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocalStorage } from "@uidotdev/usehooks";
 import Search from "./components/search";
 import Weather from "./components/weather";
 import HowTo from "./components/intro";
@@ -7,7 +8,15 @@ import type { Location } from "./types/location";
 import Footer from "./components/layout/footer";
 
 export default function App() {
-  const [location, setLocation] = useState<Location | null>(null);
+  const [lsLocation, saveLsLocation] = useLocalStorage<Location | null>(
+    "location",
+    null
+  );
+  const [location, setLocation] = useState<Location | null>(lsLocation || null);
+
+  useEffect(() => {
+    saveLsLocation(location);
+  }, [location, saveLsLocation]);
 
   return (
     <>

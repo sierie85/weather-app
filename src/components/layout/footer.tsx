@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="my-10 text-sm text-center text-black">
+      <div className="my-10 text-sm text-black">
         Copyright © {new Date().getFullYear()} by sbrie
       </div>
     </div>
